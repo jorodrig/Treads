@@ -12,7 +12,6 @@ import MapKit
 class BeginRunVC: LocationVC {
     
     @IBOutlet weak var mapView: MKMapView!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
