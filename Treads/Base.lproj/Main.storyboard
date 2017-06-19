@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -179,6 +180,11 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9PX-kQ-BFk">
                                 <rect key="frame" x="253" y="552" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="YhO-36-6Wo"/>
+                                    <constraint firstAttribute="width" secondItem="9PX-kQ-BFk" secondAttribute="height" multiplier="1:1" id="mJx-jw-GvB"/>
+                                    <constraint firstAttribute="height" constant="75" id="p6a-Z1-mHQ"/>
+                                </constraints>
                                 <state key="normal" image="pauseButton"/>
                                 <connections>
                                     <action selector="pauseBtnPressed:" destination="hwJ-I5-UYs" eventType="touchUpInside" id="XM8-hG-wXB"/>
@@ -216,10 +222,10 @@
                             <constraint firstItem="1KQ-Vz-Lxg" firstAttribute="centerX" secondItem="Dwq-Mr-ZmM" secondAttribute="centerX" id="dvK-Vd-Jhd"/>
                             <constraint firstItem="b4j-5o-7oQ" firstAttribute="centerX" secondItem="Dwq-Mr-ZmM" secondAttribute="centerX" constant="-26" id="geN-Ws-hWh"/>
                             <constraint firstItem="Q5K-cG-iU6" firstAttribute="centerX" secondItem="Dwq-Mr-ZmM" secondAttribute="centerX" id="jxd-Y4-SCa"/>
-                            <constraint firstItem="9PX-kQ-BFk" firstAttribute="leading" secondItem="b4j-5o-7oQ" secondAttribute="trailing" constant="-24.5" id="kLl-EP-oMz"/>
                             <constraint firstItem="9PX-kQ-BFk" firstAttribute="centerY" secondItem="b4j-5o-7oQ" secondAttribute="centerY" id="l2W-z5-UFg"/>
                             <constraint firstItem="mtq-4l-SUz" firstAttribute="top" secondItem="b4j-5o-7oQ" secondAttribute="bottom" constant="40" id="mQc-Mh-HBR"/>
                             <constraint firstItem="XHc-et-4cY" firstAttribute="centerX" secondItem="Dwq-Mr-ZmM" secondAttribute="centerX" id="ngj-si-BGa"/>
+                            <constraint firstItem="9PX-kQ-BFk" firstAttribute="leading" secondItem="2Qy-lV-HKM" secondAttribute="trailing" constant="25" id="pv2-ea-5NK"/>
                         </constraints>
                     </view>
                     <nil key="simulatedBottomBarMetrics"/>

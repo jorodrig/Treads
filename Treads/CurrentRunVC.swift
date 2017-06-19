@@ -23,6 +23,7 @@ class CurrentRunVC: LocationVC {
     var timer = Timer()
     
     var runDistance = 0.0
+    var pace = 0
     var counter = 0
     
     override func viewDidLoad() {
@@ -44,10 +45,20 @@ class CurrentRunVC: LocationVC {
     func startRun() {
         manager?.startUpdatingLocation()
         startTimer()
+        pauseBtn.setImage(#imageLiteral(resourceName: "pauseButton"), for: .normal)
     }
     
     func endRun() {
         manager?.stopUpdatingLocation()
+        //Add our object to Realm 
+    }
+    
+    func pauseRun() {
+        startLocation = nil
+        lastLocation = nil
+        timer.invalidate()
+        manager?.stopUpdatingLocation()
+        pauseBtn.setImage(#imageLiteral(resourceName: "resumeButton"), for: .normal)
     }
     
     func startTimer() {
@@ -60,8 +71,17 @@ class CurrentRunVC: LocationVC {
         durationLbl.text = counter.formatTimeDurationToString()
     }
     
+    func calculatePace(time seconds: Int, miles: Double) -> String{
+        pace = Int(Double(seconds) / miles)
+        return pace.formatTimeDurationToString()
+    }
+    
     @IBAction func pauseBtnPressed(_ sender: Any) {
-        
+        if timer.isValid {
+            pauseRun()
+        } else {
+            startRun()
+        }
     }
     
     func endRunSwiped(sender: UIPanGestureRecognizer) {
@@ -74,7 +94,7 @@ class CurrentRunVC: LocationVC {
                     sliderView.center.x = sliderView.center.x + translation.x
                 } else if sliderView.center.x >= (swipeBGImageView.center.x + maxAdjust) {
                     sliderView.center.x = swipeBGImageView.center.x + maxAdjust
-                    //End Run Code goes here
+                    endRun()
                     dismiss(animated: true, completion: nil)
                 } else {
                     sliderView.center.x = swipeBGImageView.center.x - minAdjust
@@ -103,6 +123,9 @@ extension CurrentRunVC: CLLocationManagerDelegate {
         } else if let location = locations.last {
             runDistance += lastLocation.distance(from: location)
             distanceLbl.text = "\(runDistance.metersToMiles(places: 2))"
+            if counter > 0 && runDistance > 0 {
+                paceLbl.text = calculatePace(time: counter, miles: runDistance.metersToMiles(places: 2))
+            }
         }
         lastLocation = locations.last
     }
