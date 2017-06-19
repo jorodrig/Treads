@@ -38,7 +38,7 @@
                                 <rect key="frame" x="0.0" y="70" width="375" height="425"/>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Run" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="aB2-zu-fap">
-                                <rect key="frame" x="169" y="28" width="37" height="22"/>
+                                <rect key="frame" x="169.5" y="28" width="37" height="22"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -113,13 +113,13 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On Run" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="XHc-et-4cY">
-                                <rect key="frame" x="154" y="28" width="68" height="22"/>
+                                <rect key="frame" x="153.5" y="28" width="68" height="22"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Rlw-SQ-qlP">
-                                <rect key="frame" x="140.5" y="199" width="94" height="99"/>
+                                <rect key="frame" x="141" y="199" width="94" height="99"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avg. Pace" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="1EQ-Jf-eY0">
                                         <rect key="frame" x="5" y="0.0" width="84.5" height="22"/>
@@ -258,7 +258,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Bug-QM-gek">
-                                <rect key="frame" x="172" y="28" width="32.5" height="22"/>
+                                <rect key="frame" x="171.5" y="28" width="32.5" height="22"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -268,7 +268,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RunLogCell" rowHeight="80" id="Wkr-ST-tka">
+                                    <tableViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RunLogCell" rowHeight="80" id="Wkr-ST-tka" customClass="RunLogCell" customModule="Treads" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wkr-ST-tka" id="GTm-Pn-kIx">
@@ -319,13 +319,23 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4MI-3m-H5p">
+                                                    <rect key="frame" x="0.0" y="78" width="375" height="2"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="2" id="yWW-aw-PFH"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="0CE-cR-vsn" firstAttribute="leading" secondItem="GTm-Pn-kIx" secondAttribute="leading" id="1be-yu-uSV"/>
+                                                <constraint firstAttribute="trailing" secondItem="4MI-3m-H5p" secondAttribute="trailing" id="Pbo-kr-zba"/>
                                                 <constraint firstAttribute="bottom" secondItem="0CE-cR-vsn" secondAttribute="bottom" id="TBd-q3-OYz"/>
+                                                <constraint firstItem="4MI-3m-H5p" firstAttribute="leading" secondItem="GTm-Pn-kIx" secondAttribute="leading" id="UQ0-4P-Q2l"/>
                                                 <constraint firstItem="hoW-oL-vVq" firstAttribute="centerY" secondItem="GTm-Pn-kIx" secondAttribute="centerY" id="blv-6o-snB"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="gVf-ty-8Fs" secondAttribute="trailing" constant="8" id="csP-Ig-evU"/>
+                                                <constraint firstAttribute="bottom" secondItem="4MI-3m-H5p" secondAttribute="bottom" id="mCQ-wC-WXI"/>
                                                 <constraint firstItem="gVf-ty-8Fs" firstAttribute="centerY" secondItem="GTm-Pn-kIx" secondAttribute="centerY" id="sia-Em-2Mg"/>
                                                 <constraint firstItem="0CE-cR-vsn" firstAttribute="top" secondItem="GTm-Pn-kIx" secondAttribute="top" id="vJI-lT-C2u"/>
                                                 <constraint firstAttribute="trailing" secondItem="0CE-cR-vsn" secondAttribute="trailing" id="vPq-Yc-zUc"/>
@@ -335,6 +345,12 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="averagePaceLbl" destination="UUv-eg-GBF" id="8r9-ya-brZ"/>
+                                            <outlet property="dateLbl" destination="gVf-ty-8Fs" id="gIM-N9-nCR"/>
+                                            <outlet property="runDurationLbl" destination="kHH-Go-yVi" id="MXL-vQ-5QX"/>
+                                            <outlet property="totalDistanceLbl" destination="mrX-O5-E2h" id="vBS-DG-6C2"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -354,6 +370,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Log" image="tabbar-myLogIconGray" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="tableView" destination="Biz-iT-MPV" id="l6u-9S-hpn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
