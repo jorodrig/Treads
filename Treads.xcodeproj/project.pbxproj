@@ -32,6 +32,7 @@
 		160FA99E1EF3449C0079A6AB /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 160FA98C1EF3449C0079A6AB /* Montserrat-Thin.ttf */; };
 		160FA99F1EF3449C0079A6AB /* Montserrat-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 160FA98D1EF3449C0079A6AB /* Montserrat-ThinItalic.ttf */; };
 		1646D2771EF6FF0B00EFFEE1 /* CurrentRunVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646D2761EF6FF0B00EFFEE1 /* CurrentRunVC.swift */; };
+		1646D2791EF8444C00EFFEE1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646D2781EF8444C00EFFEE1 /* Extensions.swift */; };
 		16CE1A101EF4A0FB002EE229 /* LocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CE1A0F1EF4A0FB002EE229 /* LocationVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		160FA98C1EF3449C0079A6AB /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
 		160FA98D1EF3449C0079A6AB /* Montserrat-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ThinItalic.ttf"; sourceTree = "<group>"; };
 		1646D2761EF6FF0B00EFFEE1 /* CurrentRunVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentRunVC.swift; sourceTree = "<group>"; };
+		1646D2781EF8444C00EFFEE1 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		16CE1A0F1EF4A0FB002EE229 /* LocationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,6 +141,7 @@
 		160FA9771EF344660079A6AB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1646D2781EF8444C00EFFEE1 /* Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1646D2771EF6FF0B00EFFEE1 /* CurrentRunVC.swift in Sources */,
+				1646D2791EF8444C00EFFEE1 /* Extensions.swift in Sources */,
 				160FA93D1EF341600079A6AB /* RunLogVC.swift in Sources */,
 				16CE1A101EF4A0FB002EE229 /* LocationVC.swift in Sources */,
 				160FA9391EF341600079A6AB /* AppDelegate.swift in Sources */,
