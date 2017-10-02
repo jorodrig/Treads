@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		160C09791F82E5C5003CA53C /* RealmConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160C09781F82E5C5003CA53C /* RealmConfig.swift */; };
 		160FA9391EF341600079A6AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160FA9381EF341600079A6AB /* AppDelegate.swift */; };
 		160FA93B1EF341600079A6AB /* BeginRunVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160FA93A1EF341600079A6AB /* BeginRunVC.swift */; };
 		160FA93D1EF341600079A6AB /* RunLogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160FA93C1EF341600079A6AB /* RunLogVC.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		160C09781F82E5C5003CA53C /* RealmConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfig.swift; sourceTree = "<group>"; };
 		160FA9351EF341600079A6AB /* Treads.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Treads.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		160FA9381EF341600079A6AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		160FA93A1EF341600079A6AB /* BeginRunVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginRunVC.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				1646D27C1EF87B4100EFFEE1 /* Constants.swift */,
+				160C09781F82E5C5003CA53C /* RealmConfig.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -310,9 +313,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Treads/Pods-Treads-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -325,13 +333,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Treads-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A46F75684D291FB19B6C4086 /* [CP] Copy Pods Resources */ = {
@@ -364,6 +375,7 @@
 				160FA9391EF341600079A6AB /* AppDelegate.swift in Sources */,
 				1646D27B1EF86A1E00EFFEE1 /* Run.swift in Sources */,
 				1646D27F1EF883D000EFFEE1 /* RunLogCell.swift in Sources */,
+				160C09791F82E5C5003CA53C /* RealmConfig.swift in Sources */,
 				160FA93B1EF341600079A6AB /* BeginRunVC.swift in Sources */,
 				1646D27D1EF87B4100EFFEE1 /* Constants.swift in Sources */,
 			);
