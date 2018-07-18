@@ -10,11 +10,11 @@ import Foundation
 import RealmSwift
 
 class Run: Object {
-    dynamic public private(set) var id = ""
-    dynamic public private(set) var date = NSDate()
-    dynamic public private(set) var pace = 0
-    dynamic public private(set) var distance = 0.0
-    dynamic public private(set) var duration = 0
+    @objc dynamic public private(set) var id = ""
+    @objc dynamic public private(set) var date = NSDate()
+    @objc dynamic public private(set) var pace = 0
+    @objc dynamic public private(set) var distance = 0.0
+    @objc dynamic public private(set) var duration = 0
     public private(set) var locations = List<Location>()
     
     override class func primaryKey() -> String {
