@@ -1,7 +1,10 @@
 {\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
-{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
-{\*\expandedcolortbl;;\csgray\c0;}
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;\f2\froman\fcharset0 Times-Roman;
+\f3\fnil\fcharset0 Menlo-Bold;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue233;\red255\green255\blue255;
+\red0\green0\blue0;}
+{\*\expandedcolortbl;;\csgray\c0;\cssrgb\c0\c0\c93333;\csgenericrgb\c100000\c100000\c100000;
+\csgenericrgb\c0\c0\c0;}
 \margl1440\margr1440\vieww9000\viewh8400\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
@@ -31,4 +34,38 @@ Unable to get the first run to show in the Log.\
 \
 The data is in the Realm DB but need to find a way to force it to be loaded initially.\
 See where the Log VC has its initializer.\
-Maybe need to add the database call in the ViewDidLoad initially.}
+Maybe need to add the database call in the ViewDidLoad initially.\
+\
+\
+03/09/2020\
+\
+Review this very important article on creating a database manager class to manage insert, update, edit, delete etc. on Realm.\
+\
+\pard\pardeftab720\sl280\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://insights.nimblechapps.com/app-development/ios-app-development/using-realm-mobile-database-with-swift-4-0-insert-update-delete-list"}}{\fldrslt 
+\f2\fs24 \cf3 \expnd0\expndtw0\kerning0
+\ul \ulc3 \CocoaLigature1 \outl0\strokewidth0 \strokec3 https://insights.nimblechapps.com/app-development/ios-app-development/using-realm-mobile-database-with-swift-4-0-insert-update-delete-list}}\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+***************************\
+\
+\
+Still unable to get initial run to load in the log VC.  I initially get this warning.  learn to use the debugger as suggested to see why this warning occurs initially.  Does not happen if I reload the simulator.\
+\
+"************
+\f3\b \cf4 \cb5 \CocoaLigature1 2020-03-09 07:47:00.861707-0400 Treads[11607:529629] [TableView] Warning once only: UITableView was told to layout its visible cells and other contents without being in the view hierarchy (the table view or one of its superviews has not been added to a window). This may cause bugs by forcing views inside the table view to load and perform layout without accurate information (e.g. table view bounds, trait collection, layout margins, safe area insets, etc), and will also cause unnecessary performance overhead due to extra layout passes. Make a symbolic breakpoint at UITableViewAlertForLayoutOutsideViewHierarchy to catch this in the debugger and see what caused this to occur, so you can avoid this action altogether if possible, or defer it until the table view has been added to a window. Table view: <UITableView: 0x7fe6a9809000; frame = (0 38; 375 629); clipsToBounds = YES; autoresize = RM+BM; gestureRecognizers = <NSArray: 0x6000001ff870>; layer = <CALayer: 0x600000e6a240>; contentOffset: \{0, 0\}; contentSize: \{375, 0\}; adjustedContentInset: \{0, 0, 0, 0\}; dataSource: <Treads.RunLogVC: 0x7fe6a7d0be20>>\
+\pard\tx543\pardeftab543\pardirnatural\partightenfactor0
+\cf4 In Get All Runs in Run.swift model\
+file:///Users/joseph/Library/Developer/CoreSimulator/Devices/CFF2F881-3073-4E0D-AA40-EA5829F204F0/data/Containers/Data/Application/D5631EE1-F12E-4A0E-8A34-166C183573B4/Documents/default.realm
+\f1\b0 \cf2 \cb1 \CocoaLigature0 *******************"\
+\
+\
+Will ignore the above for now as might be a simulator bug.\
+\
+\
+\
+See other notes above.  Resolve @objc warnings by removing and replacing the deprecated methods being referenced.\
+\
+Removed app from my iphone and reloaded and the app found my location this time.  Will test on the road\
+\
+\
+}

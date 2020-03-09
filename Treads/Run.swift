@@ -24,12 +24,21 @@ class Run: Object {         //inherits from Object
        NOTE: With Realm - we MUST create a NEW instance EVERYTIME we WRITE and everytimg we READ
        ALSO: Writes to Realm is asynchronous - so we need to take it off the main Thread - and instead use a serial dispatch  asynchronous queue
        we need to be sure we are calling it from the same Thread */
-    @objc dynamic public private(set) var id: String = ""             /*sets a realm dynamic variable caled ID.  Required - dynamic allows the Realm Backend to dynamically update any and all realm database vars as needed.  Must be dynamic.  The set is data encapsulation.  In this case we can GET data from any source but can only SET within our database file.  Same for all the other variables*/
+    //@objc dynamic public private(set) var id: String = ""
+    dynamic public private(set) var id: String = ""
+
+    //@objc dynamic public private(set) var id: String = ""             /*sets a realm dynamic variable caled ID.  Required - dynamic allows the Realm Backend to dynamically update any and all realm database vars as needed.  Must be dynamic.  The set is data encapsulation.  In this case we can GET data from any source but can only SET within our database file.  Same for all the other variables*/
     /*NOTE: Added @objc to Realm vars as without app crashed due to primary key not set on object run error */
-    @objc dynamic public private(set) var date = NSDate()     //allows for easy sorting by date.  NSDate does have timestamp if needed for display
-    @objc dynamic public private(set) var pace = 0
-    @objc dynamic public private(set) var distance = 0.0
-    @objc dynamic public private(set) var duration = 0
+    //@objc dynamic public private(set) var date = NSDate()     //allows for easy sorting by date.  NSDate does have timestamp if needed for display
+    //@objc dynamic public private(set) var pace = 0
+    //@objc dynamic public private(set) var distance = 0.0
+    //@objc dynamic public private(set) var duration = 0
+    
+    
+    dynamic public private(set) var date = NSDate()     //allows for easy sorting by date.  NSDate does have timestamp if needed for display
+    dynamic public private(set) var pace = 0
+    dynamic public private(set) var distance = 0.0
+    dynamic public private(set) var duration = 0
     /*NOTE: Type List and Realm properties cannot be declared as dynamic as these typs are generic properties*/
     public private(set) var locations = List<Location>()      //Initially an empty of locations list to track path of the run
     
@@ -66,7 +75,7 @@ class Run: Object {         //inherits from Object
 
                     try realm.write {
                         realm.add(run)
-                    try realm.commitWrite()             //not mandatory but preferred to confirm the commit
+                   // try realm.commitWrite()             //not mandatory but preferred to confirm the commit You only need to call self.realm.commitWrite() when you have previously called self.realm.beginWrite()
                     }
                 } catch{
                     debugPrint("Error adding run to realm!")

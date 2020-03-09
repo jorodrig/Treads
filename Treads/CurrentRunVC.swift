@@ -67,7 +67,9 @@ class CurrentRunVC: LocationVC {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
     }
     
-    @objc func updateCounter(){
+    //@objc func updateCounter(){
+
+    func updateCounter(){
         counter += 1
         durationLbl.text = counter.formatTimeDurationToString()
     }
@@ -85,7 +87,9 @@ class CurrentRunVC: LocationVC {
         }
     }
     
-    @objc func endRunSwiped(sender: UIPanGestureRecognizer) {
+   // @objc func endRunSwiped(sender: UIPanGestureRecognizer) {
+
+    func endRunSwiped(sender: UIPanGestureRecognizer) {
         let minAdjust: CGFloat = 80
         let maxAdjust: CGFloat = 128
         if let sliderView = sender.view {

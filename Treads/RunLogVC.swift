@@ -12,10 +12,17 @@ class RunLogVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    override func viewDidAppear() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+
     }
     
     
