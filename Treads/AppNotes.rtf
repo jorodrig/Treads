@@ -65,7 +65,50 @@ Will ignore the above for now as might be a simulator bug.\
 \
 See other notes above.  Resolve @objc warnings by removing and replacing the deprecated methods being referenced.\
 \
-Removed app from my iphone and reloaded and the app found my location this time.  Will test on the road\
+Removed app from my iphone and reloaded and the app found my location this time.  Will test on the road.\
+\
+03/10/2020\
+\
+Consider adding default values in the LogCell and also creating a function to get the database data which can be called as needed including initially in viewDidLoad and the VC's delegates methods.\
+\
+Remeber I have a link to some very good code to add a database manager class.\
+\
+Decided to debug by clear the db and observe data. It looks like initially when the first run is created, there is an error adding the first run as follows:\
+
+\f3\b \cf4 \cb5 \CocoaLigature1 In Get All Runs in Run.swift model\
+"No data found in realm db"\
+In ViewWillAppear in RunLogicVC\
+In Get All Runs in Run.swift model\
+"No data found in realm db"\
+"Error adding run to realm!"\
+\
+\
+\
+
+\f1\b0 \cf2 \cb1 \CocoaLigature0 \
+\
+If I continue adding runs during initial first run of the App, there is an error adding data to Realm and no data is found.\
+
+\f3\b \cf4 \cb5 \CocoaLigature1 In ViewWillAppear in RunLogicVC\
+In Get All Runs in Run.swift model\
+"No data found in realm db"\
+"Error adding run to realm!"\
+In ViewWillAppear in RunLogicVC\
+In Get All Runs in Run.swift model\
+"No data found in realm db"\
+In ViewWillAppear in RunLogicVC\
+In Get All Runs in Run.swift model\
+"No data found in realm db"\
+"Error adding run to realm!"\
+In ViewWillAppear in RunLogicVC\
+In Get All Runs in Run.swift model\
+"No data found in realm db"
+\f1\b0 \cf2 \cb1 \CocoaLigature0 \
+\
+\
+\
+So there is definitely a bug in storing initial data in the DB.  Work to resolve this before assuming there is a Vew issue\
+\
 \
 \
 }

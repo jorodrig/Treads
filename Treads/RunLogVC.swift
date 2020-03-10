@@ -19,9 +19,7 @@ class RunLogVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
+        print("In ViewWillAppear in RunLogicVC")
 
     }
     
@@ -30,10 +28,12 @@ class RunLogVC: UIViewController {
 
 extension RunLogVC: UITableViewDelegate, UITableViewDataSource {
     
-
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if Run.getAllRuns()?.count == 0{
+            print("Run Count is now: \(String(describing: Run.getAllRuns()?.count)) in RunLogVC.swift")
+            
+        }
         return Run.getAllRuns()?.count ?? 0
     }
     
@@ -45,6 +45,7 @@ extension RunLogVC: UITableViewDelegate, UITableViewDataSource {
             cell.configure(run: run)
             return cell
         } else {
+            
             return RunLogCell()
         }
     }
