@@ -35,10 +35,12 @@ class BeginRunVC: LocationVC {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        print("in ViewDidAppear in BeginRunVC")
         setupMapView()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
+        print("in viewDidDieappear in BeginRunVC")
         manager?.stopUpdatingLocation()
     }
     

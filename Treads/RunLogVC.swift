@@ -13,18 +13,28 @@ class RunLogVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
-        print("In ViewDidLoad in RunLogicVC")
+        super.viewDidLoad()
+        print("In ViewDidLoad() in RunLogicVC")
 
+        tableView.delegate = self           //required when extending class below
+        tableView.dataSource = self         //required when extending class below
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("In ViewDidAppear in RunLogicVC")
         //super.viewDidLoad()
         //tableView.delegate = self
         //tableView.dataSource = self
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         print("In ViewWillAppear in RunLogicVC")
-        super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
+
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        print("In ViewDidDisAppear in RunLogicVC")
 
     }
     

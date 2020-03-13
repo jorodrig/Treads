@@ -41,7 +41,7 @@ class CurrentRunVC: LocationVC {
     override func viewWillAppear(_ animated: Bool) {
         print("In CurrentRunVC viewWillAppear() ")
         manager?.delegate = self
-        manager?.distanceFilter = 10
+        manager?.distanceFilter = 10                    //to allow zoom level within the screen so not too small when viewing the path
         startRun()
     }
     
@@ -52,11 +52,14 @@ class CurrentRunVC: LocationVC {
     }
     
     func endRun() {
+        print("In endRun() in CurrentRunVC")
         manager?.stopUpdatingLocation()
+        print("pace: \(pace) ,\(runDistance) , \(counter) , \(coordinateLocations)")
         Run.addRunToRealm(pace: pace, distance: runDistance, duration: counter, locations: coordinateLocations)
     }
     
     func pauseRun() {
+        print("in pauseRun in CurrentRunVC")
         startLocation = nil
         lastLocation = nil
         timer.invalidate()
@@ -65,6 +68,7 @@ class CurrentRunVC: LocationVC {
     }
     
     func startTimer() {
+        print("in startTimer() in currentRunVC")
         durationLbl.text = counter.formatTimeDurationToString()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
     }
@@ -72,8 +76,10 @@ class CurrentRunVC: LocationVC {
     //@objc func updateCounter(){
     
     @objc func updateCounter(){
+        print("in updateCounter() in currentRunVC")
         counter += 1
         durationLbl.text = counter.formatTimeDurationToString()
+        print("counter is now: \(counter)")
     }
     
     func calculatePace(time seconds: Int, miles: Double) -> String{

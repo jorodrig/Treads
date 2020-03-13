@@ -19,6 +19,7 @@ class LocationVC: UIViewController, MKMapViewDelegate {
         manager = CLLocationManager()
         manager?.desiredAccuracy = kCLLocationAccuracyBest
         manager?.activityType = .fitness
+        //manager?.activityType = .automotiveNavigation // test automotive navigation
     }
     
     func checkLocationAuthStatus() {
