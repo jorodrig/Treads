@@ -13,13 +13,18 @@ class RunLogVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
+        print("In ViewDidLoad in RunLogicVC")
+
+        //super.viewDidLoad()
+        //tableView.delegate = self
+        //tableView.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         print("In ViewWillAppear in RunLogicVC")
+        super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
 
     }
     
@@ -39,6 +44,8 @@ extension RunLogVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "RunLogCell") as? RunLogCell {
+            print("cellForRowATtIndexPath row is now: \(indexPath.row) in RunLogicVC")
+
             guard let run = Run.getAllRuns()?[indexPath.row] else {
                 return RunLogCell()
             }

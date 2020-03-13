@@ -14,6 +14,7 @@ class Location: Object {
     @objc dynamic public private(set) var longitude = 0.0
     
     convenience init(latitude: Double, longitude: Double) {
+        print("In convenience init() in Loation.swift")
         self.init()
         self.latitude = latitude
         self.longitude = longitude

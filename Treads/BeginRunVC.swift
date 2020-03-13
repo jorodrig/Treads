@@ -21,12 +21,14 @@ class BeginRunVC: LocationVC {
     @IBOutlet weak var lastRunStack: UIStackView!
 
     override func viewDidLoad() {
+        print(" In BeginRunVC.swift viewDidLoad - start a new run")
         super.viewDidLoad()
         checkLocationAuthStatus()
         //print("Realm File Location is: \(Realm.Configuration.defaultConfiguration.fileURL!)")
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        print("In BeginRunVC.swift - viewWillAppear")
         manager?.delegate = self
         mapView.delegate = self
         manager?.startUpdatingLocation()

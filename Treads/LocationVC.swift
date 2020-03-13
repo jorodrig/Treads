@@ -14,6 +14,7 @@ class LocationVC: UIViewController, MKMapViewDelegate {
     var manager: CLLocationManager?
     
     override func viewDidLoad() {
+        print("In LocationVC.swift viewDidLoad()")
         super.viewDidLoad()
         manager = CLLocationManager()
         manager?.desiredAccuracy = kCLLocationAccuracyBest
@@ -21,6 +22,7 @@ class LocationVC: UIViewController, MKMapViewDelegate {
     }
     
     func checkLocationAuthStatus() {
+        print("In ceckLocationAuthStatus in LocationVC.swift")
         if CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
             manager?.requestWhenInUseAuthorization()
         }

@@ -28,6 +28,7 @@ class CurrentRunVC: LocationVC {
     fileprivate var counter = 0
     
     override func viewDidLoad() {
+        print("In CurrentRunVC.swift viewDidLoad() ")
         super.viewDidLoad()
         
         let swipeGesture = UIPanGestureRecognizer(target: self, action: #selector(endRunSwiped(sender:)))
@@ -38,6 +39,7 @@ class CurrentRunVC: LocationVC {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        print("In CurrentRunVC viewWillAppear() ")
         manager?.delegate = self
         manager?.distanceFilter = 10
         startRun()
