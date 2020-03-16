@@ -24,7 +24,7 @@ class BeginRunVC: LocationVC {
         print(" In BeginRunVC.swift viewDidLoad - start a new run")
         super.viewDidLoad()
         checkLocationAuthStatus()
-        //print("Realm File Location is: \(Realm.Configuration.defaultConfiguration.fileURL!)")
+        print("Realm File Location is: \(Realm.Configuration.defaultConfiguration.fileURL!)")
     }
     
     override func viewWillAppear(_ animated: Bool) {
