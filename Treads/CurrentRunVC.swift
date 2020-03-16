@@ -101,7 +101,7 @@ class CurrentRunVC: LocationVC {
         let minAdjust: CGFloat = 80
         let maxAdjust: CGFloat = 128
         if let sliderView = sender.view {
-            if sender.state == UIGestureRecognizerState.began || sender.state == UIGestureRecognizerState.changed {
+            if sender.state == UIGestureRecognizer.State.began || sender.state == UIGestureRecognizer.State.changed {
                 let translation = sender.translation(in: self.view)
                 if sliderView.center.x >= (swipeBGImageView.center.x - minAdjust) && sliderView.center.x <= (swipeBGImageView.center.x + maxAdjust) {
                     sliderView.center.x = sliderView.center.x + translation.x
@@ -114,7 +114,7 @@ class CurrentRunVC: LocationVC {
                 }
                 
                 sender.setTranslation(CGPoint.zero, in: self.view)
-            } else if sender.state == UIGestureRecognizerState.ended {
+            } else if sender.state == UIGestureRecognizer.State.ended {
                 UIView.animate(withDuration: 0.1, animations: { 
                     sliderView.center.x = self.swipeBGImageView.center.x - minAdjust
                 })
