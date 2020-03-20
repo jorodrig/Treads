@@ -22,7 +22,7 @@ class RunLogVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         print("In ViewDidAppear in RunLogicVC")
-        //super.viewDidLoad()
+        self.tableView.reloadData()
         //tableView.delegate = self
         //tableView.dataSource = self
 
@@ -41,27 +41,22 @@ class RunLogVC: UIViewController {
     
 }
 
-extension RunLogVC: UITableViewDelegate, UITableViewDataSource {
-    
+extension RunLogVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if Run.getAllRuns()?.count == 0{
-            print("Run Count is now: \(String(describing: Run.getAllRuns()?.count)) in RunLogVC.swift")
-            
-        }
-        return Run.getAllRuns()?.count ?? 0
+        //return Run.getAllRuns()?.count ?? 0 //optional since inititally we have no runs. if no runs return 0
+        return Run.getAllRuns()?.count ?? 1 //test optional since inititally we have no runs. if no runs return 1 as a test
+
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "RunLogCell") as? RunLogCell {
-            print("cellForRowATtIndexPath row is now: \(indexPath.row) in RunLogicVC")
-
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "RunLogCell") as? RunLogCell{
             guard let run = Run.getAllRuns()?[indexPath.row] else {
                 return RunLogCell()
             }
             cell.configure(run: run)
             return cell
         } else {
+            
             
             return RunLogCell()
         }

@@ -1,10 +1,12 @@
 {\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;\f2\froman\fcharset0 Times-Roman;
 \f3\fnil\fcharset0 Menlo-Bold;}
-{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue233;\red255\green255\blue255;
-\red0\green0\blue0;}
-{\*\expandedcolortbl;;\csgray\c0;\cssrgb\c0\c0\c93333;\csgenericrgb\c100000\c100000\c100000;
-\csgenericrgb\c0\c0\c0;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue233;\red0\green0\blue233;
+\red255\green255\blue255;\red0\green0\blue0;\red211\green24\blue149;\red35\green255\blue131;\red0\green160\blue255;
+}
+{\*\expandedcolortbl;;\csgray\c0;\cssrgb\c0\c0\c93333;\cssrgb\c0\c0\c93333;
+\csgenericrgb\c100000\c100000\c100000;\csgenericrgb\c0\c0\c0;\csgenericrgb\c82800\c9500\c58300;\csgenericrgb\c13700\c100000\c51200;\csgenericrgb\c0\c62600\c100000;
+}
 \margl1440\margr1440\vieww9000\viewh8400\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
@@ -51,10 +53,14 @@ Review this very important article on creating a database manager class to manag
 \
 Still unable to get initial run to load in the log VC.  I initially get this warning.  learn to use the debugger as suggested to see why this warning occurs initially.  Does not happen if I reload the simulator.\
 \
+SEE THIS TO FIX THE TABLEVIEW WARNING BELOW: {\field{\*\fldinst{HYPERLINK "https://stackoverflow.com/questions/57897288/uitableviewalertforlayoutoutsideviewhierarchy-error-warning-once-only-ios-13-g"}}{\fldrslt 
+\f2\fs24 \cf4 \expnd0\expndtw0\kerning0
+\ul \ulc4 \CocoaLigature1 \outl0\strokewidth0 \strokec4 https://stackoverflow.com/questions/57897288/uitableviewalertforlayoutoutsideviewhierarchy-error-warning-once-only-ios-13-g}}\
+\
 "************
-\f3\b \cf4 \cb5 \CocoaLigature1 2020-03-09 07:47:00.861707-0400 Treads[11607:529629] [TableView] Warning once only: UITableView was told to layout its visible cells and other contents without being in the view hierarchy (the table view or one of its superviews has not been added to a window). This may cause bugs by forcing views inside the table view to load and perform layout without accurate information (e.g. table view bounds, trait collection, layout margins, safe area insets, etc), and will also cause unnecessary performance overhead due to extra layout passes. Make a symbolic breakpoint at UITableViewAlertForLayoutOutsideViewHierarchy to catch this in the debugger and see what caused this to occur, so you can avoid this action altogether if possible, or defer it until the table view has been added to a window. Table view: <UITableView: 0x7fe6a9809000; frame = (0 38; 375 629); clipsToBounds = YES; autoresize = RM+BM; gestureRecognizers = <NSArray: 0x6000001ff870>; layer = <CALayer: 0x600000e6a240>; contentOffset: \{0, 0\}; contentSize: \{375, 0\}; adjustedContentInset: \{0, 0, 0, 0\}; dataSource: <Treads.RunLogVC: 0x7fe6a7d0be20>>\
+\f3\b \cf5 \cb6 \CocoaLigature1 2020-03-09 07:47:00.861707-0400 Treads[11607:529629] [TableView] Warning once only: UITableView was told to layout its visible cells and other contents without being in the view hierarchy (the table view or one of its superviews has not been added to a window). This may cause bugs by forcing views inside the table view to load and perform layout without accurate information (e.g. table view bounds, trait collection, layout margins, safe area insets, etc), and will also cause unnecessary performance overhead due to extra layout passes. Make a symbolic breakpoint at UITableViewAlertForLayoutOutsideViewHierarchy to catch this in the debugger and see what caused this to occur, so you can avoid this action altogether if possible, or defer it until the table view has been added to a window. Table view: <UITableView: 0x7fe6a9809000; frame = (0 38; 375 629); clipsToBounds = YES; autoresize = RM+BM; gestureRecognizers = <NSArray: 0x6000001ff870>; layer = <CALayer: 0x600000e6a240>; contentOffset: \{0, 0\}; contentSize: \{375, 0\}; adjustedContentInset: \{0, 0, 0, 0\}; dataSource: <Treads.RunLogVC: 0x7fe6a7d0be20>>\
 \pard\tx543\pardeftab543\pardirnatural\partightenfactor0
-\cf4 In Get All Runs in Run.swift model\
+\cf5 In Get All Runs in Run.swift model\
 file:///Users/joseph/Library/Developer/CoreSimulator/Devices/CFF2F881-3073-4E0D-AA40-EA5829F204F0/data/Containers/Data/Application/D5631EE1-F12E-4A0E-8A34-166C183573B4/Documents/default.realm
 \f1\b0 \cf2 \cb1 \CocoaLigature0 *******************"\
 \
@@ -75,7 +81,7 @@ Remeber I have a link to some very good code to add a database manager class.\
 \
 Decided to debug by clear the db and observe data. It looks like initially when the first run is created, there is an error adding the first run as follows:\
 
-\f3\b \cf4 \cb5 \CocoaLigature1 In Get All Runs in Run.swift model\
+\f3\b \cf5 \cb6 \CocoaLigature1 In Get All Runs in Run.swift model\
 "No data found in realm db"\
 In ViewWillAppear in RunLogicVC\
 In Get All Runs in Run.swift model\
@@ -89,7 +95,7 @@ In Get All Runs in Run.swift model\
 \
 If I continue adding runs during initial first run of the App, there is an error adding data to Realm and no data is found.\
 
-\f3\b \cf4 \cb5 \CocoaLigature1 In ViewWillAppear in RunLogicVC\
+\f3\b \cf5 \cb6 \CocoaLigature1 In ViewWillAppear in RunLogicVC\
 In Get All Runs in Run.swift model\
 "No data found in realm db"\
 "Error adding run to realm!"\
@@ -116,4 +122,25 @@ So there is definitely a bug in storing initial data in the DB.  Work to resolve
 \
 3/16/2020: No progress on above prior run time issues.  Successfully migrated to Swift 5 with no result/output change.  Continue testing. \
 			NEED to resolve the @objective issues - see if this helps.\
+\
+\
+\
+\
+3/19/2020: Completed updated the whole project: Updated to Realm 4.3.2, Updated Cocoapods, Reinstall Realmswift,\
+\
+Made some minor progress: ViewDidLoad in RunLogVC now appears to load.  There are lots of storyboard constraints to resolve.  xcode may have screwed up the prior formatting.  Still getting the initial table view hierarcy initial warning.  See if resolving the constraints will resolve this.\
+\
+The counter is not stopping even after the run is stopped.  However, the initial pause will stop the counter.  See how pause is different from Stop. \
+\
+I have changed the \cf5 \cb6 \CocoaLigature1 numberOfRowsInSection\cf2 \cb1 \CocoaLigature0  delegate tableview code to set a default on 1 Row but does not appear to solve the inital view - no data in RunLogVC still.  See if cellforRowAt indexpath will help with a default Cell\
+\
+\
+\
+IMPORTANT: Added in RunLogVC viewWillAppear \cf5 \cb6 \CocoaLigature1         \cf7 \cb6 self\cf5 \cb6 .\cf8 \cb6 tableView\cf5 \cb6 .\cf9 \cb6 reloadData\cf5 \cb6 ()    \
+\cf2 \cb1 \CocoaLigature0            This solved the initial run NOT showing up in the LogVC.  \
+\
+Observed the issue whereby there are multiple rows of the same data or run - looks like duplicated of the same data.\
+See if reloaddata is causing this.  \
+\
+Consider clearing the table and reloading from db each time\
 }
