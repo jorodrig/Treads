@@ -76,10 +76,6 @@ class Run: Object {         //inherits from Object
                     try realm.write {
                         realm.add(run)
                     try realm.commitWrite()             //not mandatory but preferred to confirm the commit You only need to call self.realm.commitWrite() when you have previously called self.realm.beginWrite()
-                        //realmPathString = (Realm.Configuration.defaultConfiguration.fileURL!)
-                        print("in addRunToRealm \(Realm.Configuration.defaultConfiguration.fileURL!)")
-                        
-                        //saveRealmFile(realmFileURL: Realm.Configuration.defaultConfiguration.fileURL!)
                     }
                 } catch{
                     debugPrint("Error adding run to realm!")
