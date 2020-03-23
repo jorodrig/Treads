@@ -87,6 +87,17 @@ class CurrentRunVC: LocationVC {
         return pace.formatTimeDurationToString()
     }
     
+    @IBAction func END(_ sender: Any) {
+        print("In endRun() in CurrentRunVC")
+        manager?.stopUpdatingLocation()
+        print("pace: \(pace) ,\(runDistance) , \(counter) , \(coordinateLocations)")
+        Run.addRunToRealm(pace: pace, distance: runDistance, duration: counter, locations: coordinateLocations)
+        if timer.isValid{
+            pauseRun()
+            dismiss(animated: true, completion: nil)
+        }
+        
+    }
     @IBAction func pauseBtnPressed(_ sender: Any) {
         if timer.isValid {
             pauseRun()
