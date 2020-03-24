@@ -167,6 +167,16 @@ Consider: when END is pressed and dismisses the CurrentRunVC, need to reload the
 \
 \
 \
+3/24/2020: See if it the View that shows the last run as an overlay on the mapview that is the cause of the initial warning that a View
+\f3\b\fs24 \cf5 \cb4 \CocoaLigature1 UITableView was told to layout its visible cells and other... Warning
+\f1\b0\fs22 \cf2 \cb1 \CocoaLigature0 .  This warning may be related to the View overlay of last run not showing initially.  I noticed after a clean build, the view overlay for last run flashes briefly.\
+Pause trying to force the refresh after first run issue and resolve the Waring about the layout issue for UITableView.\
+\
+\
+I also verified the overlay View flashed then disappears and also the current location is not valid and zoomed in.  Resolve all of these before attempting to resolve any other issues.\
+\
+\
+\
 \
 \
 }

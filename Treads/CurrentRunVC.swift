@@ -56,15 +56,18 @@ class CurrentRunVC: LocationVC {
         manager?.stopUpdatingLocation()
         print("pace: \(pace) ,\(runDistance) , \(counter) , \(coordinateLocations)")
         Run.addRunToRealm(pace: pace, distance: runDistance, duration: counter, locations: coordinateLocations)
+        //dismiss(animated: true, completion: nil)
     }
     
     func pauseRun() {
         print("in pauseRun in CurrentRunVC")
         startLocation = nil
         lastLocation = nil
-        timer.invalidate()
-        manager?.stopUpdatingLocation()
-        pauseBtn.setImage(#imageLiteral(resourceName: "resumeButton"), for: .normal)
+        if timer.isValid{
+            timer.invalidate()
+            manager?.stopUpdatingLocation()
+            pauseBtn.setImage(#imageLiteral(resourceName: "resumeButton"), for: .normal)
+        }
     }
     
     func startTimer() {
@@ -93,7 +96,8 @@ class CurrentRunVC: LocationVC {
         print("pace: \(pace) ,\(runDistance) , \(counter) , \(coordinateLocations)")
         Run.addRunToRealm(pace: pace, distance: runDistance, duration: counter, locations: coordinateLocations)
         if timer.isValid{
-            pauseRun()
+            timer.invalidate()
+            //pauseRun()
             dismiss(animated: true, completion: nil)
         }
         
