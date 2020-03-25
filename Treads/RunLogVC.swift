@@ -20,9 +20,16 @@ class RunLogVC: UIViewController {
         tableView.dataSource = self         //required when extending class below
     }
     
+    override func viewDidLayoutSubviews() {
+        print("In viewDidLayoutSubviews in RunLogicVC")
+
+        self.tableView.reloadData()
+    }
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         print("In ViewDidAppear in RunLogicVC")
-        self.tableView.reloadData()
+        //self.tableView.reloadData()
         //tableView.delegate = self
         //tableView.dataSource = self
 
@@ -30,11 +37,15 @@ class RunLogVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         print("In ViewWillAppear in RunLogicVC")
+        //self.tableView.reloadData()
+        //tableView.delegate = self
+        //tableView.dataSource = self
 
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         print("In ViewDidDisAppear in RunLogicVC")
+        //tableView.removeFromSuperview()
 
     }
     
