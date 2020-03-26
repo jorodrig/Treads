@@ -55,7 +55,7 @@ class RunLogVC: UIViewController {
 extension RunLogVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //return Run.getAllRuns()?.count ?? 0 //optional since inititally we have no runs. if no runs return 0
-        return Run.getAllRuns()?.count ?? 1 //test optional since inititally we have no runs. if no runs return 1 as a test
+        return Run.getAllRuns()?.count ?? 0 //test optional since inititally we have no runs. if no runs return 1 as a test
 
     }
     

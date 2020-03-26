@@ -16,8 +16,9 @@ class RunLogCell: UITableViewCell {
     @IBOutlet weak var dateLbl: UILabel!
     
     override func awakeFromNib() {
-        print("In RunLogCell.swift awakeFromNib")
         super.awakeFromNib()
+        print("In RunLogCell.swift awakeFromNib")
+
     }
     
     func configure(run: Run) {
