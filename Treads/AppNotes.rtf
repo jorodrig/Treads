@@ -190,4 +190,6 @@ Also, I added a breakpoint Symbolic for the UITableViewAlertForLayoutOutsideView
 \
 \
 4/1/2020: Resume to resolve the Last Run issue.  Redo lesson 154 especially the view that was added to display the last run.\
+\
+4/3/2020: It appears the LastRunBGView is not displaying due to Swift compatibility issues.  When I remove all @objc inferences, the app displays correctly but crashes due to unable to create a realm object - no primary key found, when I add them back in the app works but does not update the LastRUnBGview except if I go back and forth between the LogVC and the Main VC.  Continue to investigate why this is so\
 }
