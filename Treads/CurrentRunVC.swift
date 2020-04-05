@@ -78,6 +78,8 @@ class CurrentRunVC: LocationVC {
     
     //@objc func updateCounter(){
     
+
+    
     @objc func updateCounter(){
        // print("in updateCounter() in currentRunVC")
         counter += 1
