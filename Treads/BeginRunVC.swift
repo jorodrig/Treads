@@ -52,7 +52,9 @@ class BeginRunVC: LocationVC {
             if mapView.overlays.count > 0 {
                 mapView.removeOverlays(mapView.overlays)
             }
-            mapView.addOverlay(overlay)
+            mapView.addOverlay(overlay)   //Swift 5 version
+
+            //mapView.add(overlay)                                  //Swift 4 version
             lastRunStack.isHidden = false
             lastRunBGView.isHidden = false
             lastRunCloseBtn.isHidden = false
@@ -84,6 +86,8 @@ class BeginRunVC: LocationVC {
     func centerMapOnUserLocation() {
         mapView.userTrackingMode = .follow
         let coordinateRegion = MKCoordinateRegion(center: mapView.userLocation.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
+
+        //let coordinateRegion = MKCoordinateRegionMakeWithDistance(mapView.userLocation.coordinate, 1000, 1000)  //Swift 4 version
         mapView.setRegion(coordinateRegion, animated: true)
     }
     

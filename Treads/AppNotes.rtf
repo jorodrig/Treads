@@ -194,4 +194,31 @@ Also, I added a breakpoint Symbolic for the UITableViewAlertForLayoutOutsideView
 4/3/2020: It appears the LastRunBGView is not displaying due to Swift compatibility issues.  When I remove all @objc inferences, the app displays correctly but crashes due to unable to create a realm object - no primary key found, when I add them back in the app works but does not update the LastRUnBGview except if I go back and forth between the LogVC and the Main VC.  Continue to investigate why this is so.\
 \
 Continue to resolve the Swift compatibility issue with Realm - look at the counter function in currentRunVC\
+\
+4/5/2020: Decided to end development for now or permanently on this project.  Cannot seem to resolve the overlay issue - tried in Swift 4 version but no change.\
+Time to move on \
+\
+See the next project or start my own project for iKissable.\
+\
+4/9/2020: Deployed on my iphone7 and the app performed well except for the same issues when reloading the last run overlay.  I am considering an option to segue to the log screen automaticaly.  This way when the user goes back to the Run screen, it should automatically reload the overlay and the last run.\
+\
+If this works add the following features:\
+(1) Add tabs or menu buttons for Navigation and Biking.\
+(2) Add the option to reload previous runs or routes.\
+(3) Consider limiting the Log view to hold a max 5-10 previous routes.  This will be a rolling previous with the oldest route being deleted if a new route is added.\
+(4) Consider in App purchase for unlimited routes.\
+(5) Add the ability to clear or delete individual routes or all routes from previous routes.\
+(6) Review what it will take to make it a tourist app that based on location loads different themes based on countries.  OR - create a Setting Tab whereby users can customize the app by selecting their Country which in turn will load that country's flag colors.\
+(7) More Advanced features would be to get each country's tourist information like Sites and Attractions - see if this is publicly available (low Priority).\
+\
+(8) Consider FIRST - making it a Caribbean App and preload each island nation's profile informaiton like:\
+	(a) Language Spoken\
+	(b) Population makeup\
+	(c) Population Size\
+	(d) Ecomomic data\
+	(e) Main Attractions\
+	(f) Police, Fire, Emergency Numbers\
+	(g) Religious makeup\
+	(h) Main foods/diet\
+	(i) Any other useful \
 }
