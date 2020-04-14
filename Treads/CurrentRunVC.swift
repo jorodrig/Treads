@@ -100,7 +100,10 @@ class CurrentRunVC: LocationVC {
         if timer.isValid{
             timer.invalidate()
             //pauseRun()
-            dismiss(animated: true, completion: nil)
+            //dismiss(animated: true, completion: nil)
+            //performSegue(withIdentifier: "GotoRunLogVC", sender: RunLogVC.self) 
+            //dismiss(animated: true, completion: nil)
+
         }
         
     }

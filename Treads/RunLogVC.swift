@@ -11,6 +11,9 @@ import UIKit
 class RunLogVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBAction func backbuttonpressed(_ sender: Any) {
+
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
