@@ -175,7 +175,9 @@ Consider: when END is pressed and dismisses the CurrentRunVC, need to reload the
 Pause trying to force the refresh after first run issue and resolve the Waring about the layout issue for UITableView.\
 \
 \
+\pard\tx543\tx8028\pardeftab543\pardirnatural\partightenfactor0
 I also verified the overlay View flashed then disappears and also the current location is not valid and zoomed in.  Resolve all of these before attempting to resolve any other issues.\
+\pard\tx543\pardeftab543\pardirnatural\partightenfactor0
 \
 3/25/2020: Looks like I have been looking at the wrong code to resolve the Tableview Layout issue.  The Last Run View overlay is not loading as expected.  Work to resolve this.  Remember, THere is a viewDidLayoutSubviews function that is called each time a View is changed but after ViewDidLoad and any auto layout constraints.\
 Also, I added a breakpoint Symbolic for the UITableViewAlertForLayoutOutsideViewHierarchy suggestion from the Debugger.  Also, I became familiar with \
@@ -222,6 +224,10 @@ If this works add the following features:\
 	(h) Main foods/diet\
 	(i) Any other useful \
 \
-4/14/2020: Successful is adding seque from currentVC to RunLogVC as pop over.  Can swipe to dimiss but added a BACK button.  Need to program the BACK button so it can go to home screen or add a back button to go back to caller VC AND add a new Home button to go to home screen.\
+4/14/2020: Successful is adding segue from currentVC to RunLogVC as pop over.  Can swipe to dimiss but added a BACK button.  Need to program the BACK button so it can go to home screen or add a back button to go back to caller VC AND add a new Home button to go to home screen.\
 This solved the problem whereby when a Run ends, it is not updating the LastRun View.\
+\
+5/6/2020: Been reviewing push notification using Onesignal - unlimited Free for Mobile and I still have a free personal Heroku account.  Heroku has virtual servers that I may be able to use called Dynos which are Linux VMs.  Need to review how this will work for IOS\
+\
+\
 }
